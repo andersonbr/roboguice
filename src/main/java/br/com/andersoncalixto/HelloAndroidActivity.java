@@ -1,8 +1,11 @@
 package br.com.andersoncalixto;
 
+import com.google.inject.Inject;
+
 import roboguice.activity.RoboActivity;
 import roboguice.inject.InjectView;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -13,6 +16,7 @@ public class HelloAndroidActivity extends RoboActivity {
 	private static String TAG = "roboguice";
 	@InjectView(R.id.button)
 	private Button botao;
+	@Inject Vibrator vibrator;
 
 	/**
 	 * Called when the activity is first created.
@@ -34,6 +38,7 @@ public class HelloAndroidActivity extends RoboActivity {
 			@Override
 			public void onClick(View v) {
 				Log.i(TAG, "clique!");
+				vibrator.vibrate(2000);
 			}
 
 		});
