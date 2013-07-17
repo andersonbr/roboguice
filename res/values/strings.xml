@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Teste do dynagraph</string>
+    <string name="hello">Roboguice Test</string>
     <string name="app_name">Roboguice</string>
     <string name="botao">Vibrate</string>
 </resources>
