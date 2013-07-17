@@ -5,6 +5,10 @@ Roboguice
 
 Projeto inicial com roboguice by Anderson Calixto
 
+Necessário plugins no eclipse:
+  m2e
+  m2e-android
+
 
 Archetype:
 
