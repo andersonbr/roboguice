@@ -7,17 +7,49 @@
     <uses-sdk
         android:minSdkVersion="10"
         android:targetSdkVersion="17" />
-    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <!-- permissions -->
+    <!-- to maps -->
+    <permission
+        android:name="br.com.andersoncalixto.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="br.com.andersoncalixto.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- misc -->
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon"
         android:label="@string/app_name" >
-        <activity android:name=".HelloAndroidActivity" >
+        <activity android:name=".activity.HelloAndroidActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <!-- maps key for 7B:DE:CC:59:50:7B:79:5C:DF:6A:63:AA:29:13:BF:B0:AF:C4:AB:B2 (debug.keystore) -->
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyBUEnwLWWo13B8lRDtZtvkL9My4tjl5FnU" />
+
+        <activity
+            android:name=".activity.MapAddressSearchActivity"
+            android:label="@string/title_activity_map_address_search" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="br.com.andersoncalixto.activity.HelloAndroidActivity" />
         </activity>
     </application>
 

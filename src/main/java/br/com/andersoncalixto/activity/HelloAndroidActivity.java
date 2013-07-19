@@ -1,22 +1,25 @@
-package br.com.andersoncalixto;
-
-import com.google.inject.Inject;
+package br.com.andersoncalixto.activity;
 
 import roboguice.activity.RoboActivity;
 import roboguice.inject.InjectView;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import br.com.andersoncalixto.R;
+
+import com.google.inject.Inject;
 
 public class HelloAndroidActivity extends RoboActivity {
 
 	private static String TAG = "roboguice";
 	@InjectView(R.id.button)
 	private Button botao;
-	@Inject Vibrator vibrator;
+	@Inject
+	Vibrator vibrator;
 
 	/**
 	 * Called when the activity is first created.
@@ -36,12 +39,19 @@ public class HelloAndroidActivity extends RoboActivity {
 		botao.setOnClickListener(new OnClickListener() {
 
 			@Override
-			public void onClick(View v) {
+			public void onClick(View view) {
 				Log.i(TAG, "clique!");
-				vibrator.vibrate(2000);
+//				vibrator.vibrate(2000);
+				sendMessage(view);
 			}
 
 		});
+	}
+
+	/** Called when the user clicks the Send button */
+	public void sendMessage(View view) {
+		Intent intent = new Intent(this, MapAddressSearchActivity.class);
+		startActivity(intent);
 	}
 
 }
