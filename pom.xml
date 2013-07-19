@@ -26,7 +26,7 @@
 			<version>5</version>
 <!-- 			<type>apklib</type> -->
 			<scope>system</scope>
-			<systemPath>${basedir}/lib/google-play-services-jar-5.jar</systemPath>
+			<systemPath>${basedir}/lib/google-play-services-9.jar</systemPath>
 		</dependency>
 <!-- 		<dependency> -->
 <!-- 			<groupId>com.google.android.gms</groupId> -->
